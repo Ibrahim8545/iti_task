@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomButttom extends StatelessWidget {
-  CustomButttom({this.onTap,this.textStyle, this .color,required this.text, super.key});
+  CustomButttom({required this.onTap,this.textStyle, this .color,required this.text, super.key});
 Color? color;
 String text;
 TextStyle? textStyle ;
-void Function()? onTap;
+VoidCallback  onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(

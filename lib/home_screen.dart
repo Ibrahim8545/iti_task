@@ -3,6 +3,7 @@ import 'package:loginscreen/widget/custom_button.dart';
 import 'package:loginscreen/widget/login_modal_route.dart';
 import 'package:loginscreen/widget/signup_moda_route.dart';
 
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 14),
               child: Text(
-                'Lorem ipsum dolor sit amet,consectetur adipiscing elit,  sed do eiusmod',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
                 style: TextStyle(
                     fontSize: 23,
                     color: Colors.white,
@@ -45,10 +46,16 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.amber,
                 onTap: () {
                   showModalBottomSheet(
-                    backgroundColor: Colors.transparent,
                     context: context,
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
                     builder: (context) {
-                      return LoginModalButtomSheet();
+                      return Padding(
+                        padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom,
+                        ),
+                        child: LoginModalButtomSheet(),
+                      );
                     },
                   );
                 },
@@ -57,19 +64,25 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomButttom(
-                text: ('Sign up'),
+                text: 'Sign up',
                 textStyle: TextStyle(color: Colors.amber),
                 onTap: () {
                   showModalBottomSheet(
-                     backgroundColor: Colors.transparent,
                     context: context,
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
                     builder: (context) {
-                      return SignUpModalButtomSheet();
+                      return Padding(
+                        padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom,
+                        ),
+                        child: SignUpModalButtomSheet(),
+                      );
                     },
                   );
                 },
               ),
-            )
+            ),
           ],
         ),
       ),

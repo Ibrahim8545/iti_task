@@ -1,30 +1,50 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormFiled extends StatelessWidget {
-   CustomTextFormFiled({required this.obText ,this.icon,required this.validatorText ,required this.labelText , super.key});
-String labelText;
-String validatorText;
-IconData? icon;
-bool obText;
+  final String labelText;
+  final String? validatorText;
+  final IconData? icon;
+  final bool obscureText;
+  TextEditingController? controller;
+
+  CustomTextFormFiled({
+    required this.labelText,
+    this.icon,
+    TextEditingController? controller,
+    this.validatorText,
+    required this.obscureText,
+
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
       decoration: InputDecoration(
-        border:const  OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.black),
         ),
-        focusedBorder: const OutlineInputBorder( borderSide: BorderSide(color: Colors.black),),
-        enabledBorder:const  OutlineInputBorder( borderSide: BorderSide(color: Colors.black),),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.black),
+        ),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.black),
+        ),
         labelStyle: const TextStyle(color: Colors.black),
-        labelText:'$labelText', 
-        suffixIcon: Icon(icon),
+        labelText: labelText,
+        suffixIcon: icon != null ? Icon(icon) : null,
       ),
-      validator: (value) {
-        return validatorText;
+      validator: (value) 
+      {
+        if(value!.isEmpty)
+        {
+          return(validatorText);
+        }
       },
-      obscureText:obText ,
-      
+      obscureText: obscureText,
+      controller:controller ,
     );
   }
 }
+
+
