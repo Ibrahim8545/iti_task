@@ -5,6 +5,17 @@ class LoginModalButtomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+    padding:const  EdgeInsets.all(14),
+      decoration:const  BoxDecoration(
+          color: Color(0xffffecaa),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(60),
+          topRight: Radius.circular(60),
+        ),
+      ),
+
+      
+    );
   }
 }

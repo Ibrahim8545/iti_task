@@ -44,12 +44,12 @@ class HomeScreen extends StatelessWidget {
                 text: 'Login',
                 color: Colors.amber,
                 onTap: () {
-                  
                   showModalBottomSheet(
-                    context: context, 
-                  builder:(context) {
-                    return LoginModalButtomSheet();
-                  },
+                    backgroundColor: Colors.transparent,
+                    context: context,
+                    builder: (context) {
+                      return LoginModalButtomSheet();
+                    },
                   );
                 },
               ),
@@ -60,11 +60,12 @@ class HomeScreen extends StatelessWidget {
                 text: ('Sign up'),
                 textStyle: TextStyle(color: Colors.amber),
                 onTap: () {
-                      showModalBottomSheet(
-                    context: context, 
-                  builder:(context) {
-                    return SignUpModalButtomSheet();
-                  },
+                  showModalBottomSheet(
+                     backgroundColor: Colors.transparent,
+                    context: context,
+                    builder: (context) {
+                      return SignUpModalButtomSheet();
+                    },
                   );
                 },
               ),
